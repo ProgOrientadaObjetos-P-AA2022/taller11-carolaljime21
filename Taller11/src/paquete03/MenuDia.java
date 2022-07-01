@@ -37,9 +37,9 @@ public class MenuDia extends Menu {
     public String toString() {
         String cadena = String.format("Menu del dia\n%s", super.toString());
         cadena = String.format("%s"
-                + "Valor del postre: %.2f\n"
-                + "Valor de la bebida: %.2f\n"
-                + "Valor total: %.2f\n",
+                + "\tValor del postre: %.2f\n"
+                + "\tValor de la bebida: %.2f\n"
+                + "\tValor total: %.2f\n",
                 cadena,
                 obtenerValorPostre(),
                 obtenerValorBebida(),

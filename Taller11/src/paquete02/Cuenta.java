@@ -10,18 +10,14 @@ public class Cuenta {
     double subTotal;
     double iva;
 
-    public Cuenta(String n, double iva, ArrayList<Menu> m) {
+    public Cuenta(String n, double iv, ArrayList<Menu> m) {
         nombre = n;
-        iva = iva;
+        iva = iv;
         listaMenu = m;
     }
 
     public void establecerNombre(String x) {
         nombre = x;
-    }
-
-    public void establecerIVA(double x) {
-        iva = x;
     }
 
     public void establecerListaMenu(ArrayList<Menu> x) {
@@ -33,16 +29,15 @@ public class Cuenta {
         for (int i = 0; i < listaMenu.size(); i++) {
             sum = sum + listaMenu.get(i).obtenerValorMenu();
         }
-        subTotal = sum * iva;
+        subTotal = sum;
+    }
+    
+    public void establecerIVA(double x) {
+        iva = x;
     }
 
     public void establecerValorCancelar() {
-        double sum = 0;
-        for (int i = 0; i < listaMenu.size(); i++) {
-            sum = sum + listaMenu.get(i).obtenerValorMenu();
-        }
-        
-        valorCancelar = obtenerSubTotal() + sum;
+        valorCancelar = subTotal + (subTotal * iva)/100;
     }
 
     public String obtenerNombre() {
@@ -67,21 +62,20 @@ public class Cuenta {
     
     @Override
     public String toString() {
-        String cadena = String.format("Datos Cuenta\n"
-                + "Cliente: :%s\n", obtenerNombre());
+        String cadena = String.format("Factura\n"
+                + "Cliente: %s\n", obtenerNombre());
+        
         for (int i = 0; i < obtenerListaMenu().size(); i++) {
             cadena = String.format("%s"
-                    + "%d "
                     + "%s\n", 
                     cadena,
-                    (i+1),
                     obtenerListaMenu().get(i));
 
         }
         cadena=String.format("\n%s"
-                + "Subtotal: %.2f\n"
+                + "Subtotal: %.1f\n"
                 + "Iva: %.2f\n"
-                + "Total a cancelar: %.2f\n",
+                + "Total a pagar: %.3f\n",
                 cadena,
                 obtenerSubTotal(),
                 obtenerIVA(),

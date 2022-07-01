@@ -8,7 +8,7 @@ public class MenuNinios extends Menu {
     
     public MenuNinios(String n, double vi, double vh, double vp){ 
         super (n, vi);
-        valorPorcionHelado = vp;
+        valorPorcionHelado = vh;
         valorPorcionPastel = vp;
     }
     
@@ -35,11 +35,11 @@ public class MenuNinios extends Menu {
     
     @Override
     public String toString() {
-        String cadena = String.format("Menu de niños\n%s", super.toString());
+        String cadena = String.format("Menu del dia\n%s", super.toString());
         cadena = String.format("%s"
-                + "Porción de helado: %.2f\n"
-                + "Porcion de pastel: %.2f\n"
-                + "Valor total: %.2f\n",
+                + "\tValor helado: %.2f\n"
+                + "\tValor pastel: %.2f\n"
+                + "\tValor del menú: %.2f\n",
                 cadena,
                 obtenerValorPorcionHelado(),
                 obtenerValorPorcionPastel(),
