@@ -1,12 +1,12 @@
 package paquete03;
 import paquete02.Menu;
 
-public class MenuNinios extends Menu {
+public class MenuNinio extends Menu {
     
     double valorPorcionHelado;
     double valorPorcionPastel;
     
-    public MenuNinios(String n, double vi, double vh, double vp){ 
+    public MenuNinio(String n, double vi, double vh, double vp){ 
         super (n, vi);
         valorPorcionHelado = vh;
         valorPorcionPastel = vp;

@@ -10,10 +10,10 @@ public class Principal {
 
         ArrayList<Menu> listaMenu = new ArrayList<>();
 
-        MenuNinios menuNi1 = new MenuNinios("Niños 01", 2.00, 1.00, 1.50);
+        MenuNinio menuNi1 = new MenuNinio("Niños 01", 2.00, 1.00, 1.50);
         menuNi1.establecerValorMenu();
         
-        MenuNinios menuNi2 = new MenuNinios("Niños 02", 3.00, 1.00, 1.50);
+        MenuNinio menuNi2 = new MenuNinio("Niños 02", 3.00, 1.00, 1.50);
         menuNi2.establecerValorMenu();
         
         MenuEconomico economico = new MenuEconomico("Econo 001", 4.00, 25);
